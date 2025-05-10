@@ -76,7 +76,7 @@ export function MealSuggestions() {
         description: mealObj.description,
         imageKeywords: mealObj.imageKeywords,
         // Use a generic or loading placeholder, or temporarily picsum
-        imageUrl: `https://picsum.photos/seed/${encodeURIComponent((mealObj.imageKeywords || mealObj.name).trim().replace(/\s+/g, '-'))}/400/300`,
+        imageUrl: undefined,
         date: dateString,
         rating: 0,
         notes: '',

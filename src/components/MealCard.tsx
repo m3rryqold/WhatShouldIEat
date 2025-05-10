@@ -6,6 +6,7 @@ import Image from 'next/image';
 import type { Meal } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Skeleton } from "@/components/ui/skeleton"
 import { Textarea } from '@/components/ui/textarea';
 import { Star, Utensils, ImageOff } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -55,7 +56,7 @@ export const MealCard: FC<MealCardProps> = ({ meal, onUpdateMeal }) => {
 
   return (
     <Card className="w-full shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
-      {meal.imageUrl && !imageError ? (
+      {meal.imageUrl ? (meal.imageUrl && !imageError ? (
         <div className="relative w-full aspect-video rounded-t-lg overflow-hidden">
           <Image
             src={meal.imageUrl}
@@ -70,11 +71,20 @@ export const MealCard: FC<MealCardProps> = ({ meal, onUpdateMeal }) => {
         </div>
       ) : meal.imageUrl && imageError ? (
         <div className="relative w-full aspect-video rounded-t-lg overflow-hidden bg-muted flex items-center justify-center">
-           <ImageOff className="h-16 w-16 text-muted-foreground" />
-           <p className="sr-only">Image failed to load</p>
+          <ImageOff className="h-16 w-16 text-muted-foreground" />
+          <p className="sr-only">Image failed to load</p>
         </div>
-      ) : null}
-      
+      ) : (
+        <div className="relative w-full aspect-video rounded-t-lg overflow-hidden bg-muted flex items-center justify-center">
+          <ImageOff className="h-16 w-16 text-muted-foreground" />
+          <p className="sr-only">No image available</p>
+        </div>
+      )) : (
+        <div className="relative w-full aspect-video rounded-t-lg overflow-hidden bg-muted flex items-center justify-center">
+          <Skeleton className="h-full w-full" />
+        </div>
+      )}
+
       <CardHeader className={cn((!meal.imageUrl || imageError) && "rounded-t-lg")}>
         <CardTitle className="flex items-center gap-2 text-xl">
           <Utensils className="h-6 w-6 text-primary" />

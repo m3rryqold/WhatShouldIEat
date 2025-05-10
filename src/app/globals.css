@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 220 20% 96%; /* Very Light Cool Gray */
+    --foreground: 220 30% 20%; /* Dark Desaturated Blue */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 30% 20%; /* Dark Desaturated Blue */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 220 30% 20%; /* Dark Desaturated Blue */
+
+    --primary: 210 70% 55%; /* Medium Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 210 70% 75%; /* Lighter Blue */
+    --secondary-foreground: 220 30% 20%; /* Dark Desaturated Blue */
+
+    --muted: 220 15% 88%; /* Light Gray */
+    --muted-foreground: 220 10% 45%; /* Medium Gray */
+
+    --accent: 35 90% 55%; /* Vibrant Orange */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 80%; /* Light Gray Border */
+    --input: 220 15% 80%; /* Light Gray Input Border */
+    --ring: 210 70% 55%; /* Primary Blue for focus ring */
+
+    --chart-1: 210 70% 50%;
+    --chart-2: 35 90% 60%;
+    --chart-3: 190 60% 50%;
+    --chart-4: 280 60% 60%;
+    --chart-5: 50 80% 55%;
+    --radius: 0.5rem;
+
+    /* Sidebar specific colors - adjust if sidebar is used extensively with this theme */
+    --sidebar-background: 220 25% 98%; /* Slightly off-white, cooler */
+    --sidebar-foreground: 220 25% 25%; /* Darker blue-gray */
+    --sidebar-primary: 210 70% 50%; /* Primary blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 220 15% 92%; /* Very light gray-blue for accent backgrounds */
+    --sidebar-accent-foreground: 210 70% 50%; /* Primary blue for text on accent */
+    --sidebar-border: 220 15% 85%; /* Light gray-blue border */
+    --sidebar-ring: 210 70% 55%; /* Primary blue for ring */
+  }
+
+  .dark {
+    --background: 220 25% 10%; /* Very Dark Desaturated Blue */
+    --foreground: 220 15% 90%; /* Light Cool Gray */
+
+    --card: 220 25% 12%; /* Slightly Lighter Dark Blue */
+    --card-foreground: 220 15% 90%; /* Light Cool Gray */
+
+    --popover: 220 25% 10%; /* Very Dark Desaturated Blue */
+    --popover-foreground: 220 15% 90%; /* Light Cool Gray */
+
+    --primary: 210 70% 55%; /* Medium Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 210 70% 35%; /* Darker Blue */
+    --secondary-foreground: 220 15% 90%; /* Light Cool Gray */
+
+    --muted: 220 20% 20%; /* Dark Gray */
+    --muted-foreground: 220 10% 60%; /* Lighter Gray for muted text */
+
+    --accent: 35 90% 60%; /* Vibrant Orange (slightly adjusted for dark) */
+    --accent-foreground: 220 30% 10%; /* Dark text for contrast on orange */
+    
+    --destructive: 0 70% 50%; /* Darker red */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 20% 25%; /* Dark Gray Border */
+    --input: 220 20% 25%; /* Dark Gray Input Border */
+    --ring: 210 70% 55%; /* Primary Blue */
+
+    --chart-1: 210 70% 60%;
+    --chart-2: 35 90% 65%;
+    --chart-3: 190 60% 55%;
+    --chart-4: 280 60% 65%;
+    --chart-5: 50 80% 60%;
+
+    /* Sidebar dark theme */
+    --sidebar-background: 220 25% 8%; 
+    --sidebar-foreground: 220 15% 85%;
+    --sidebar-primary: 210 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 210 70% 60%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 210 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
